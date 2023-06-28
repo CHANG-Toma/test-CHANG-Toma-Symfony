@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ asset('css/tailwind.css') }} ">
+    <title>
+        {% block title %}L'Amusée Paris | Test Front{% endblock %}
+    </title>
+
+</head>
+<body>
+
+<header class="sticky top-0 bg-gray-50 z-50">
+    <nav class="flex flex-col md:flex-row flex-wrap justify-around">
+        {# logo #}
+        <div class="py-2">
+            <a href="#" class="text-center">
+                <img class="ml-2 md:ml-0" src="{{ asset('assets/img/logo.png') }}" alt="logo">
+            </a>
+        </div>
+        {# lien text #}
+        <div class="flex justify-center mb-7 md:mb-0">
+            <ul class="flex flex-col sm:flex-row sm:gap-10 md:items-center">
+                <li>
+                    <a href="#">La Mariée</a>
+                </li>
+                <li>
+                    <a href="#">Robes en couleur</a>
+                </li>
+                <li>
+                    <a href="#">La Maison</a>
+                </li>
+                <li>
+                    <a href="#">Rendez-vous/Boutique</a>
+                </li>
+            </ul>
+        </div>
+        {# lien icon #}
+        <div class="flex justify-center">
+            <ul class="flex gap-6 md:gap-3 justify-center md:items-center">
+                <li>
+                    <a href="#">
+                        <img src="{{ asset('assets/img/person.png') }}" alt="Person">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{{ asset('assets/img/Vector.png') }}" alt="bag">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{{ asset('assets/img/search.png') }}" alt="search">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+{% block body %}
+
+<section class="mt-6 md:mt-0 relative">
+    <div class="absolute w-full h-full top-0 flex justify-center items-center">
+        <h1 class="text-white text-9xl font-thin tracking-wide">Nos Clientes</h1>
+    </div>
+    <img class="w-full" src="{{ asset('assets/img/banner.png') }}" alt="banniere">
+</section>
+
+<section class="flex flex-col items-center flex-wrap lg:flex-row lg:justify-center gap-10 m-10 ">
+
+    <div class="relative flex justify-center group">
+        <img class="w-[450px] h-[450px] min-w-[330px] object-cover transition group-hover:bg-black" src="{{ allImage[0].url }}">
+        <div class="absolute z-30 flex w-full h-full justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <p class="text-white text-lg font-normal text-center">{{ allImage[0].texte }}</p>
+        </div>
+        <div class="absolute z-20 h-full w-full bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+    </div>
+    <div class="relative flex justify-center group">
+        <img class="w-[926px] h-[450px] min-w-[330px] object-cover transition group-hover:bg-black" src="{{ allImage[1].url }}">
+        <div class="absolute z-30 flex w-full h-full justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <p class="text-white text-lg font-normal text-center">{{ allImage[1].texte }}</p>
+        </div>
+        <div class="absolute z-20 h-full w-full bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+    </div>
+
+</section>
+
+<section class="flex flex-col items-center flex-wrap lg:flex-row lg:justify-center gap-10 m-10 ">
+        {% for image in allImage[2:] %}
+            <div class="relative flex justify-center group">
+                <img class="w-[450px] h-[450px] object-cover transition group-hover:bg-black" src={{image.url}}>
+                <div class="absolute z-30 flex w-full h-full justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p class="text-white text-lg font-normal text-center">{{ image.texte }}</p>
+                </div>
+                <div class="absolute z-20 h-full w-full bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+            </div>
+        {% endfor %}
+</section>
+
+{% endblock %}
+
+<footer class="w-full flex flex-col sm:flex-row sm:justify-evenly text-sm p-5 gap-6 top-0 bg-gray-50 z-50">
+    <div>
+        <ul class="flex flex-col gap-2">
+            <a href="#"> <li class="uppercase font-bold mb-4">La Mariée</li> </a>
+            <a href="#"><li>Cérémonie</li></a>
+            <a href="#"><li>Civil</li></a>
+            <a href="#"><li>Accessoire</li></a>
+            <a href="#"><li>Seconde Main</li></a>
+        </ul>
+    </div>
+    <div>
+        <ul class="flex flex-col gap-2">
+            <a href="#"><li class="uppercase font-bold mb-4">Robes en Couleur</li></a>
+            <a href="#"><li>Collection 2022</li></a>
+            <a href="#"><li>Seconde main couleur</li></a>
+            <a href="#"><li>Intemporels</li></a>
+        </ul>
+    </div>
+    <div>
+        <ul class="flex flex-col gap-2">
+            <a href="#"><li class="uppercase font-bold mb-4">La Maison</li></a>
+            <a href="#"><li>Nous</li></a>
+            <a href="#"><li>Blog</li></a>
+            <a href="#"><li>FAQ</li></a>
+            <a href="#"><li>Contact</li></a>
+        </ul>
+    </div>
+    <div>
+        <ul class="flex flex-col gap-2">
+            <a href="#"><li class="uppercase font-bold mb-4">Rendez-vous / Boutique</li></a>
+            <a href="#"><li>Prise de rendez-vous au showroom</li></a>
+            <a href="#"><li>Sur-Mesure</li></a>
+            <a href="#"><li>Essayage Virtuel</li></a>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>
