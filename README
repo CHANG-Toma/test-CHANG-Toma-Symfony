@@ -1,0 +1,18 @@
+TEST L'Amusée - CHANG Toma : 
+
+Pour accéder au test Back-end : http://127.0.0.1:8000/Form
+
+Pour accéder au test Front-end : http://127.0.0.1:8000/homepage
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------
+En cas d'erreur comme celle-ci :
+-------------------------------------------------------------------------------------------------------------------
+Warning: require_once(D:\...\...\test-CHANG-Toma-master/vendor/autoload_runtime.php): 
+Failed to open stream: No such file or directory in D:\...\...\test-CHANG-Toma-master\public\index.php on line 5
+
+Exécuter dans le terminal du projet : composer install
+Ensuite : Symfony server:start
+-------------------------------------------------------------------------------------------------------------------
