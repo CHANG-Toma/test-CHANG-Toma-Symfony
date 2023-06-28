@@ -1,5 +1,7 @@
 TEST L'Amusée - CHANG Toma : 
 
+Framework : Symfony et Tailwind
+
 Pour accéder au test Back-end : http://127.0.0.1:8000/Form
 
 Pour accéder au test Front-end : http://127.0.0.1:8000/homepage
